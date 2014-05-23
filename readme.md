@@ -1,6 +1,10 @@
 USB and SDCARD Firmware flashing for the ARDUINO ATMEGA 2560 and ADK
 ---------------------------------------------------------------------
 
+master branch is sdcard flash
+bootloader_from_flash is flash from an spi chip
+
+
 mechanics :
 
 The bootloader looks for byte in eeprom at address 0x1FF:
