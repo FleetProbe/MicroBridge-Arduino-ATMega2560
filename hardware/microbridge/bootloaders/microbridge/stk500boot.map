@@ -1,0 +1,715 @@
+Archive member included because of file (symbol)
+
+/usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_mulsi3.o)
+                              pff.o (__mulsi3)
+/usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_divmodhi4.o)
+                              stk500boot.o (__divmodhi4)
+/usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_udivmodsi4.o)
+                              stk500boot.o (__udivmodsi4)
+/usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_exit.o)
+                              /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o (exit)
+/usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_copy_data.o)
+                              stk500boot.o (__do_copy_data)
+/usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_clear_bss.o)
+                              stk500boot.o (__do_clear_bss)
+/usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_udivmodhi4.o)
+                              /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_divmodhi4.o) (__udivmodhi4)
+/usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/libc.a(memset.o)
+                              stk500boot.o (memset)
+/usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/libc.a(eerd_byte_atmega2560.o)
+                              stk500boot.o (__eerd_byte_m2560)
+/usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/libc.a(eewr_byte_atmega2560.o)
+                              stk500boot.o (__eewr_byte_m2560)
+
+Allocating common symbols
+Common symbol       size              file
+
+Fatfs               0x2a              stk500boot.o
+gEepromIndex        0x4               stk500boot.o
+gFlashIndex         0x4               stk500boot.o
+Buff                0x100             stk500boot.o
+gRamIndex           0x4               stk500boot.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x00000000         0x00100000         xr
+data             0x00800200         0x0000fe00         rw !x
+eeprom           0x00810000         0x00010000         rw !x
+fuse             0x00820000         0x00000400         rw !x
+lock             0x00830000         0x00000400         rw !x
+signature        0x00840000         0x00000400         rw !x
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+Address of section .data set to 0x800200
+LOAD /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+LOAD stk500boot.o
+LOAD pff.o
+LOAD mmc.o
+LOAD asmfunc.o
+LOAD /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/libm.a
+Address of section .text set to 0x3e000
+LOAD /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a
+LOAD /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/libc.a
+LOAD /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x0003e000     0x17d2
+ *(.vectors)
+ .vectors       0x0003e000       0xe4 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+                0x0003e000                __vectors
+                0x0003e000                __vector_default
+ *(.vectors)
+ *(.progmem.gcc*)
+ *(.progmem*)
+ .progmem.data  0x0003e0e4        0xb stk500boot.o
+                0x0003e0e4                gTextMsg_CPU_Name
+                0x0003e0f0                . = ALIGN (0x2)
+ *fill*         0x0003e0ef        0x1 00
+                0x0003e0f0                __trampolines_start = .
+ *(.trampolines)
+ .trampolines   0x0003e0f0        0x0 linker stubs
+ *(.trampolines*)
+                0x0003e0f0                __trampolines_end = .
+ *(.jumptables)
+ *(.jumptables*)
+ *(.lowtext)
+ *(.lowtext*)
+                0x0003e0f0                __ctors_start = .
+ *(.ctors)
+                0x0003e0f0                __ctors_end = .
+                0x0003e0f0                __dtors_start = .
+ *(.dtors)
+                0x0003e0f0                __dtors_end = .
+ SORT(*)(.ctors)
+ SORT(*)(.dtors)
+ *(.init0)
+ .init0         0x0003e0f0        0x0 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+                0x0003e0f0                __init
+ *(.init0)
+ *(.init1)
+ *(.init1)
+ *(.init2)
+ .init2         0x0003e0f0       0x10 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+ *(.init2)
+ *(.init3)
+ *(.init3)
+ *(.init4)
+ .init4         0x0003e100       0x1c /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_copy_data.o)
+                0x0003e100                __do_copy_data
+ .init4         0x0003e11c       0x10 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_clear_bss.o)
+                0x0003e11c                __do_clear_bss
+ *(.init4)
+ *(.init5)
+ *(.init5)
+ *(.init6)
+ *(.init6)
+ *(.init7)
+ *(.init7)
+ *(.init8)
+ *(.init8)
+ *(.init9)
+ .init9         0x0003e12c        0x6 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+ .init9         0x0003e132        0xe stk500boot.o
+                0x0003e132                __jumpMain
+ *(.init9)
+ *(.text)
+ .text          0x0003e140        0x2 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+                0x0003e140                __vector_42
+                0x0003e140                __vector_22
+                0x0003e140                __vector_28
+                0x0003e140                __vector_1
+                0x0003e140                __vector_32
+                0x0003e140                __vector_34
+                0x0003e140                __vector_24
+                0x0003e140                __vector_12
+                0x0003e140                __vector_55
+                0x0003e140                __vector_46
+                0x0003e140                __bad_interrupt
+                0x0003e140                __vector_6
+                0x0003e140                __vector_31
+                0x0003e140                __vector_35
+                0x0003e140                __vector_39
+                0x0003e140                __vector_3
+                0x0003e140                __vector_23
+                0x0003e140                __vector_30
+                0x0003e140                __vector_45
+                0x0003e140                __vector_25
+                0x0003e140                __vector_11
+                0x0003e140                __vector_54
+                0x0003e140                __vector_13
+                0x0003e140                __vector_17
+                0x0003e140                __vector_19
+                0x0003e140                __vector_56
+                0x0003e140                __vector_7
+                0x0003e140                __vector_49
+                0x0003e140                __vector_41
+                0x0003e140                __vector_43
+                0x0003e140                __vector_27
+                0x0003e140                __vector_5
+                0x0003e140                __vector_33
+                0x0003e140                __vector_47
+                0x0003e140                __vector_52
+                0x0003e140                __vector_37
+                0x0003e140                __vector_4
+                0x0003e140                __vector_44
+                0x0003e140                __vector_51
+                0x0003e140                __vector_9
+                0x0003e140                __vector_2
+                0x0003e140                __vector_21
+                0x0003e140                __vector_15
+                0x0003e140                __vector_36
+                0x0003e140                __vector_29
+                0x0003e140                __vector_40
+                0x0003e140                __vector_8
+                0x0003e140                __vector_26
+                0x0003e140                __vector_48
+                0x0003e140                __vector_14
+                0x0003e140                __vector_53
+                0x0003e140                __vector_10
+                0x0003e140                __vector_50
+                0x0003e140                __vector_16
+                0x0003e140                __vector_18
+                0x0003e140                __vector_20
+                0x0003e140                __vector_38
+ .text          0x0003e142      0x10a stk500boot.o
+                0x0003e15a                delay_ms
+                0x0003e178                PrintFromPROGMEM
+                0x0003e19e                PrintNewLine
+                0x0003e1a6                PrintFromPROGMEMln
+                0x0003e1aa                PrintString
+                0x0003e1c0                PrintHexByte
+                0x0003e1e8                PrintDecInt
+ .text          0x0003e24c      0x950 pff.o
+                0x0003e4b2                pf_mount
+                0x0003e6ea                pf_open
+                0x0003e9dc                pf_read
+ .text          0x0003eb9c      0x270 mmc.o
+                0x0003ec06                disk_initialize
+                0x0003ed52                disk_readp
+ .text          0x0003ee0c       0x9a asmfunc.o
+                0x0003ee0c                init_spi
+                0x0003ee16                dly_100us
+                0x0003ee26                select
+                0x0003ee2c                deselect
+                0x0003ee2e                rcv_spi
+                0x0003ee30                xmit_spi
+                0x0003ee4a                flash_erase
+                0x0003ee68                flash_write
+ .text          0x0003eea6        0x0 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_mulsi3.o)
+ .text          0x0003eea6        0x0 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_divmodhi4.o)
+ .text          0x0003eea6        0x0 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_udivmodsi4.o)
+ .text          0x0003eea6        0x0 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_exit.o)
+ .text          0x0003eea6        0x0 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_copy_data.o)
+ .text          0x0003eea6        0x0 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_clear_bss.o)
+ .text          0x0003eea6        0x0 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_udivmodhi4.o)
+ .text          0x0003eea6        0x0 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/libc.a(memset.o)
+ .text          0x0003eea6        0x0 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/libc.a(eerd_byte_atmega2560.o)
+ .text          0x0003eea6        0x0 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/libc.a(eewr_byte_atmega2560.o)
+                0x0003eea6                . = ALIGN (0x2)
+ *(.text.*)
+ .text.startup  0x0003eea6      0x81e stk500boot.o
+                0x0003eea6                main
+ .text.libgcc   0x0003f6c4       0x3e /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_mulsi3.o)
+                0x0003f6c4                __mulsi3
+ .text.libgcc   0x0003f702       0x26 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_divmodhi4.o)
+                0x0003f702                __divmodhi4
+                0x0003f702                _div
+ .text.libgcc   0x0003f728       0x44 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_udivmodsi4.o)
+                0x0003f728                __udivmodsi4
+ .text.libgcc   0x0003f76c        0x0 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_exit.o)
+ .text.libgcc   0x0003f76c        0x0 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_copy_data.o)
+ .text.libgcc   0x0003f76c        0x0 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_clear_bss.o)
+ .text.libgcc   0x0003f76c       0x28 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_udivmodhi4.o)
+                0x0003f76c                __udivmodhi4
+ .text.avr-libc
+                0x0003f794        0xe /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/libc.a(memset.o)
+                0x0003f794                memset
+ .text.avr-libc
+                0x0003f7a2       0x10 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/libc.a(eerd_byte_atmega2560.o)
+                0x0003f7a2                __eerd_byte_m2560
+ .text.avr-libc
+                0x0003f7b2       0x1c /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/libc.a(eewr_byte_atmega2560.o)
+                0x0003f7b2                __eewr_byte_m2560
+                0x0003f7b4                __eewr_r18_m2560
+                0x0003f7ce                . = ALIGN (0x2)
+ *(.fini9)
+ .fini9         0x0003f7ce        0x0 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_exit.o)
+                0x0003f7ce                exit
+                0x0003f7ce                _exit
+ *(.fini9)
+ *(.fini8)
+ *(.fini8)
+ *(.fini7)
+ *(.fini7)
+ *(.fini6)
+ *(.fini6)
+ *(.fini5)
+ *(.fini5)
+ *(.fini4)
+ *(.fini4)
+ *(.fini3)
+ *(.fini3)
+ *(.fini2)
+ *(.fini2)
+ *(.fini1)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x0003f7ce        0x4 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_exit.o)
+ *(.fini0)
+                0x0003f7d2                _etext = .
+
+.data           0x00800200       0x12 load address 0x0003f7d2
+                0x00800200                PROVIDE (__data_start, .)
+ *(.data)
+ .data          0x00800200        0x0 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+ .data          0x00800200       0x11 stk500boot.o
+                0x0080020d                check
+ .data          0x00800211        0x0 pff.o
+ .data          0x00800211        0x0 mmc.o
+ .data          0x00800211        0x0 asmfunc.o
+ .data          0x00800211        0x0 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_mulsi3.o)
+ .data          0x00800211        0x0 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_divmodhi4.o)
+ .data          0x00800211        0x0 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_udivmodsi4.o)
+ .data          0x00800211        0x0 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_exit.o)
+ .data          0x00800211        0x0 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_copy_data.o)
+ .data          0x00800211        0x0 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_clear_bss.o)
+ .data          0x00800211        0x0 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_udivmodhi4.o)
+ .data          0x00800211        0x0 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/libc.a(memset.o)
+ .data          0x00800211        0x0 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/libc.a(eerd_byte_atmega2560.o)
+ .data          0x00800211        0x0 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/libc.a(eewr_byte_atmega2560.o)
+ *(.data*)
+ *(.rodata)
+ *(.rodata*)
+ *(.gnu.linkonce.d*)
+                0x00800212                . = ALIGN (0x2)
+ *fill*         0x00800211        0x1 00
+                0x00800212                _edata = .
+                0x00800212                PROVIDE (__data_end, .)
+
+.bss            0x00800212      0x13b
+                0x00800212                PROVIDE (__bss_start, .)
+ *(.bss)
+ .bss           0x00800212        0x0 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+ .bss           0x00800212        0x2 stk500boot.o
+                0x00800212                app_start
+ .bss           0x00800214        0x2 pff.o
+ .bss           0x00800216        0x1 mmc.o
+ .bss           0x00800217        0x0 asmfunc.o
+ .bss           0x00800217        0x0 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_mulsi3.o)
+ .bss           0x00800217        0x0 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_divmodhi4.o)
+ .bss           0x00800217        0x0 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_udivmodsi4.o)
+ .bss           0x00800217        0x0 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_exit.o)
+ .bss           0x00800217        0x0 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_copy_data.o)
+ .bss           0x00800217        0x0 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_clear_bss.o)
+ .bss           0x00800217        0x0 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_udivmodhi4.o)
+ .bss           0x00800217        0x0 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/libc.a(memset.o)
+ .bss           0x00800217        0x0 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/libc.a(eerd_byte_atmega2560.o)
+ .bss           0x00800217        0x0 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/libc.a(eewr_byte_atmega2560.o)
+ *(.bss*)
+ *(COMMON)
+ COMMON         0x00800217      0x136 stk500boot.o
+                0x00800217                Fatfs
+                0x00800241                gEepromIndex
+                0x00800245                gFlashIndex
+                0x00800249                Buff
+                0x00800349                gRamIndex
+                0x0080034d                PROVIDE (__bss_end, .)
+                0x0003f7d2                __data_load_start = LOADADDR (.data)
+                0x0003f7e4                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x0080034d        0x0
+                0x0080034d                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                0x0080034d                PROVIDE (__noinit_end, .)
+                0x0080034d                _end = .
+                0x0080034d                PROVIDE (__heap_start, .)
+
+.eeprom         0x00810000        0x0
+ *(.eeprom*)
+                0x00810000                __eeprom_end = .
+
+.fuse
+ *(.fuse)
+ *(.lfuse)
+ *(.hfuse)
+ *(.efuse)
+
+.lock
+ *(.lock*)
+
+.signature
+ *(.signature*)
+
+.stab           0x00000000      0xcf0
+ *(.stab)
+ .stab          0x00000000      0x6e4 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+ .stab          0x000006e4      0x42c asmfunc.o
+                                0x438 (size before relaxing)
+ .stab          0x00000b10       0x6c /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/libc.a(memset.o)
+                                 0x78 (size before relaxing)
+ .stab          0x00000b7c       0x90 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/libc.a(eerd_byte_atmega2560.o)
+                                 0x9c (size before relaxing)
+ .stab          0x00000c0c       0xe4 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/libc.a(eewr_byte_atmega2560.o)
+                                 0xf0 (size before relaxing)
+
+.stabstr        0x00000000      0x23f
+ *(.stabstr)
+ .stabstr       0x00000000      0x23f /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment
+ *(.comment)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000      0x150
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x30 stk500boot.o
+ .debug_aranges
+                0x00000030       0x20 pff.o
+ .debug_aranges
+                0x00000050       0x20 mmc.o
+ .debug_aranges
+                0x00000070       0x20 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_mulsi3.o)
+ .debug_aranges
+                0x00000090       0x20 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_divmodhi4.o)
+ .debug_aranges
+                0x000000b0       0x20 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_udivmodsi4.o)
+ .debug_aranges
+                0x000000d0       0x20 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_exit.o)
+ .debug_aranges
+                0x000000f0       0x20 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_copy_data.o)
+ .debug_aranges
+                0x00000110       0x20 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_clear_bss.o)
+ .debug_aranges
+                0x00000130       0x20 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_udivmodhi4.o)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x00000000     0x1b23
+ *(.debug_info)
+ .debug_info    0x00000000      0xa52 stk500boot.o
+ .debug_info    0x00000a52      0x953 pff.o
+ .debug_info    0x000013a5      0x23e mmc.o
+ .debug_info    0x000015e3       0xc0 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_mulsi3.o)
+ .debug_info    0x000016a3       0xc0 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_divmodhi4.o)
+ .debug_info    0x00001763       0xc0 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_udivmodsi4.o)
+ .debug_info    0x00001823       0xc0 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_exit.o)
+ .debug_info    0x000018e3       0xc0 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_copy_data.o)
+ .debug_info    0x000019a3       0xc0 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_clear_bss.o)
+ .debug_info    0x00001a63       0xc0 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_udivmodhi4.o)
+ *(.gnu.linkonce.wi.*)
+
+.debug_abbrev   0x00000000      0x631
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000      0x2a1 stk500boot.o
+ .debug_abbrev  0x000002a1      0x221 pff.o
+ .debug_abbrev  0x000004c2       0xe3 mmc.o
+ .debug_abbrev  0x000005a5       0x14 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_mulsi3.o)
+ .debug_abbrev  0x000005b9       0x14 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_divmodhi4.o)
+ .debug_abbrev  0x000005cd       0x14 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_udivmodsi4.o)
+ .debug_abbrev  0x000005e1       0x14 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_exit.o)
+ .debug_abbrev  0x000005f5       0x14 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_copy_data.o)
+ .debug_abbrev  0x00000609       0x14 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_clear_bss.o)
+ .debug_abbrev  0x0000061d       0x14 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_udivmodhi4.o)
+
+.debug_line     0x00000000      0x999
+ *(.debug_line)
+ .debug_line    0x00000000      0x3bb stk500boot.o
+ .debug_line    0x000003bb      0x1f9 pff.o
+ .debug_line    0x000005b4       0xed mmc.o
+ .debug_line    0x000006a1       0x79 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_mulsi3.o)
+ .debug_line    0x0000071a       0x6d /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_divmodhi4.o)
+ .debug_line    0x00000787       0x7c /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_udivmodsi4.o)
+ .debug_line    0x00000803       0x5c /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_exit.o)
+ .debug_line    0x0000085f       0x6a /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_copy_data.o)
+ .debug_line    0x000008c9       0x62 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_clear_bss.o)
+ .debug_line    0x0000092b       0x6e /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_udivmodhi4.o)
+
+.debug_frame    0x00000000      0x3d4
+ *(.debug_frame)
+ .debug_frame   0x00000000      0x100 stk500boot.o
+ .debug_frame   0x00000100      0x1fc pff.o
+ .debug_frame   0x000002fc       0xd8 mmc.o
+
+.debug_str      0x00000000      0x570
+ *(.debug_str)
+ .debug_str     0x00000000      0x439 stk500boot.o
+                                0x492 (size before relaxing)
+ .debug_str     0x00000439       0xf7 pff.o
+                                0x2ab (size before relaxing)
+ .debug_str     0x00000530       0x40 mmc.o
+                                0x16c (size before relaxing)
+
+.debug_loc      0x00000000     0x1f24
+ *(.debug_loc)
+ .debug_loc     0x00000000      0xe7a stk500boot.o
+ .debug_loc     0x00000e7a      0xcfb pff.o
+ .debug_loc     0x00001b75      0x3af mmc.o
+
+.debug_macinfo
+ *(.debug_macinfo)
+OUTPUT(stk500boot.elf elf32-avr)
+LOAD linker stubs
+
+.debug_ranges   0x00000000      0x1f0
+ .debug_ranges  0x00000000       0xd8 stk500boot.o
+ .debug_ranges  0x000000d8      0x118 pff.o
+
+Cross Reference Table
+
+Symbol                                            File
+Buff                                              stk500boot.o
+Fatfs                                             stk500boot.o
+PrintDecInt                                       stk500boot.o
+PrintFromPROGMEM                                  stk500boot.o
+PrintFromPROGMEMln                                stk500boot.o
+PrintHexByte                                      stk500boot.o
+PrintNewLine                                      stk500boot.o
+PrintString                                       stk500boot.o
+__bad_interrupt                                   /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__bss_end                                         /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_clear_bss.o)
+__bss_start                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_clear_bss.o)
+__data_end                                        /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_copy_data.o)
+__data_load_start                                 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_copy_data.o)
+__data_start                                      /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_copy_data.o)
+__divmodhi4                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_divmodhi4.o)
+                                                  stk500boot.o
+__do_clear_bss                                    /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_clear_bss.o)
+                                                  mmc.o
+                                                  pff.o
+                                                  stk500boot.o
+__do_copy_data                                    /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_copy_data.o)
+                                                  mmc.o
+                                                  pff.o
+                                                  stk500boot.o
+__eerd_byte_m2560                                 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/libc.a(eerd_byte_atmega2560.o)
+                                                  stk500boot.o
+__eewr_byte_m2560                                 /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/libc.a(eewr_byte_atmega2560.o)
+                                                  stk500boot.o
+__eewr_r18_m2560                                  /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/libc.a(eewr_byte_atmega2560.o)
+__heap_end                                        /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__init                                            /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__jumpMain                                        stk500boot.o
+__mulsi3                                          /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_mulsi3.o)
+                                                  pff.o
+__stack                                           /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__udivmodhi4                                      /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_udivmodhi4.o)
+                                                  /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_divmodhi4.o)
+__udivmodsi4                                      /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_udivmodsi4.o)
+                                                  pff.o
+                                                  stk500boot.o
+__vector_1                                        /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_10                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_11                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_12                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_13                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_14                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_15                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_16                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_17                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_18                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_19                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_2                                        /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_20                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_21                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_22                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_23                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_24                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_25                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_26                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_27                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_28                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_29                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_3                                        /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_30                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_31                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_32                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_33                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_34                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_35                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_36                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_37                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_38                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_39                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_4                                        /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_40                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_41                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_42                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_43                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_44                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_45                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_46                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_47                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_48                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_49                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_5                                        /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_50                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_51                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_52                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_53                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_54                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_55                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_56                                       /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_6                                        /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_7                                        /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_8                                        /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_9                                        /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vector_default                                  /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+__vectors                                         /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+_div                                              /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_divmodhi4.o)
+_exit                                             /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_exit.o)
+app_start                                         stk500boot.o
+check                                             stk500boot.o
+delay_ms                                          stk500boot.o
+deselect                                          asmfunc.o
+                                                  mmc.o
+disk_initialize                                   mmc.o
+                                                  pff.o
+disk_readp                                        mmc.o
+                                                  pff.o
+dly_100us                                         asmfunc.o
+                                                  mmc.o
+exit                                              /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/avr6/libgcc.a(_exit.o)
+                                                  /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+flash_erase                                       asmfunc.o
+                                                  stk500boot.o
+flash_write                                       asmfunc.o
+                                                  stk500boot.o
+gEepromIndex                                      stk500boot.o
+gFlashIndex                                       stk500boot.o
+gRamIndex                                         stk500boot.o
+gTextMsg_CPU_Name                                 stk500boot.o
+init_spi                                          asmfunc.o
+                                                  mmc.o
+main                                              stk500boot.o
+                                                  /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/crtm2560.o
+memset                                            /usr/local/CrossPack-AVR-20130212/lib/gcc/avr/4.6.2/../../../../avr/lib/avr6/libc.a(memset.o)
+                                                  stk500boot.o
+pf_mount                                          pff.o
+                                                  stk500boot.o
+pf_open                                           pff.o
+                                                  stk500boot.o
+pf_read                                           pff.o
+                                                  stk500boot.o
+rcv_spi                                           asmfunc.o
+                                                  mmc.o
+select                                            asmfunc.o
+                                                  mmc.o
+xmit_spi                                          asmfunc.o
+                                                  mmc.o

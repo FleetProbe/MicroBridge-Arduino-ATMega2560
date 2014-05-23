@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?>
+
+<cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+	<storageModule moduleId="org.eclipse.cdt.core.settings">
+		<cconfiguration id="it.baeyens.avreclipse.toolchain.winavr.base.1959429125">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="it.baeyens.avreclipse.toolchain.winavr.base.1959429125" moduleId="org.eclipse.cdt.core.settings" name="Default">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.MakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="${ProjName}" buildProperties="" id="it.baeyens.avreclipse.toolchain.winavr.base.1959429125" name="Default" parent="org.eclipse.cdt.build.core.emptycfg">
+					<folderInfo id="it.baeyens.avreclipse.toolchain.winavr.base.1959429125.1993860395" name="/" resourcePath="">
+						<toolChain id="it.baeyens.avreclipse.toolchain.winavr.base.1624683961" name="it.baeyens.avreclipse.toolchain.winavr.base" superClass="it.baeyens.avreclipse.toolchain.winavr.base">
+							<option id="it.baeyens.avreclipse.toolchain.options.toolchain.objcopy.flash.1887617243" name="Generate HEX file for Flash memory" superClass="it.baeyens.avreclipse.toolchain.options.toolchain.objcopy.flash"/>
+							<option id="it.baeyens.avreclipse.toolchain.options.toolchain.objcopy.eeprom.687033759" name="Generate HEX file for EEPROM" superClass="it.baeyens.avreclipse.toolchain.options.toolchain.objcopy.eeprom"/>
+							<option id="it.baeyens.avreclipse.toolchain.options.toolchain.objdump.544827705" name="Generate Extended Listing (Source + generated Assembler)" superClass="it.baeyens.avreclipse.toolchain.options.toolchain.objdump"/>
+							<option id="it.baeyens.avreclipse.toolchain.options.toolchain.size.188104802" name="Print Size" superClass="it.baeyens.avreclipse.toolchain.options.toolchain.size"/>
+							<option id="it.baeyens.avreclipse.toolchain.options.toolchain.avrdude.1513486796" name="AVRDude" superClass="it.baeyens.avreclipse.toolchain.options.toolchain.avrdude"/>
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="it.baeyens.avreclipse.targetplatform.avr.722129762" name="AVR Cross-Target" osList="all" superClass="it.baeyens.avreclipse.targetplatform.avr"/>
+							<builder id="it.baeyens.avreclipse.target.builder.winavr.base.276802739" managedBuildOn="false" name="AVR GNU Make Builder.Default" superClass="it.baeyens.avreclipse.target.builder.winavr.base"/>
+							<tool id="it.baeyens.avreclipse.tool.assembler.winavr.base.1932084960" name="AVR Assembler" superClass="it.baeyens.avreclipse.tool.assembler.winavr.base"/>
+							<tool id="it.baeyens.avreclipse.tool.compiler.winavr.base.1452862237" name="AVR Compiler" superClass="it.baeyens.avreclipse.tool.compiler.winavr.base"/>
+							<tool id="it.baeyens.avreclipse.tool.cppcompiler.base.1226215347" name="AVR C++ Compiler" superClass="it.baeyens.avreclipse.tool.cppcompiler.base"/>
+							<tool id="it.baeyens.avreclipse.tool.linker.winavr.base.326962543" name="AVR C Linker" superClass="it.baeyens.avreclipse.tool.linker.winavr.base"/>
+							<tool id="it.baeyens.avreclipse.tool.cpplinker.base.2118524624" name="AVR C++ Linker" superClass="it.baeyens.avreclipse.tool.cpplinker.base"/>
+							<tool id="it.baeyens.avreclipse.tool.archiver.winavr.base.1968754244" name="AVR Archiver" superClass="it.baeyens.avreclipse.tool.archiver.winavr.base"/>
+						</toolChain>
+					</folderInfo>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+	</storageModule>
+	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+		<project id="MicroBridge.null.321682020" name="MicroBridge"/>
+	</storageModule>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+	</storageModule>
+</cproject>

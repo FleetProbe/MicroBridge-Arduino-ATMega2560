@@ -1,0 +1,234 @@
+   1               	# 1 "asmfunc.S"
+   1               	;---------------------------------------------------------------------------;
+   0               	
+   0               	
+   2               	; MMC hardware controls and Flash controls      (C)ChaN, 2010
+   3               	;---------------------------------------------------------------------------;
+   4               	; Hardware dependent macros to be modified
+   5               	
+   6               	//sparkfun microsd
+   7               	//#define	DDR_CS	_SFR_IO_ADDR(DDRB), 0	// MMC CS pin (DDR, PORT)
+   8               	//#define	PORT_CS	_SFR_IO_ADDR(PORTB), 0
+   9               	// i2GPS
+  10               	//#define	DDR_CS	_SFR_IO_ADDR(DDRB), 2	// MMC CS pin (DDR, PORT)
+  11               	//#define	PORT_CS	_SFR_IO_ADDR(PORTB), 2
+  12               	
+  13               	// Arduino Ethernet
+  14               	#define	DDR_CS	_SFR_IO_ADDR(DDRB), 0	// MMC CS pin (DDR, PORT)
+  15               	#define	PORT_CS	_SFR_IO_ADDR(PORTB), 0
+  16               	
+  17               	
+  18               	#define	DDR_CK	_SFR_IO_ADDR(DDRB), 1	// MMC SCLK pin (DDR, PORT)
+  19               	#define	PORT_CK	_SFR_IO_ADDR(PORTB), 1
+  20               	
+  21               	#define	DDR_DI	_SFR_IO_ADDR(DDRB), 2	// MMC DI pin (DDR, PORT)
+  22               	#define	PORT_DI	_SFR_IO_ADDR(PORTB), 2
+  23               	
+  24               	#define	PIN_DO	_SFR_IO_ADDR(PINB), 3	// MMC DO pin (PIN, PORT)
+  25               	#define	PORT_DO	_SFR_IO_ADDR(PORTB), 3
+  26               	
+  27               	
+  28               	
+  29               	;---------------------------------------------------------------------------;
+  32               	.list
+  33               	.text
+  34               	
+  35               	
+  36               	;---------------------------------------------------------------------------;
+  37               	; Initialize MMC port
+  38               	;
+  39               	; void init_spi (void);
+  40               	
+  41               	.global init_spi
+  42               	.func init_spi
+  43               	init_spi:
+  44:asmfunc.S     **** 	sbi	DDR_CS		; CS: output
+  45:asmfunc.S     **** 	sbi	DDR_DI		; DI: output
+  46:asmfunc.S     **** 	sbi	DDR_CK		; SCLK: output
+  47:asmfunc.S     **** 	sbi	PORT_DO		; DO: pull-up
+  48:asmfunc.S     **** 	ret
+  49               	.endfunc
+  50               	
+  51               	
+  52               	
+  53               	;---------------------------------------------------------------------------;
+  54               	; Delay 100 microseconds
+  55               	;
+  56               	; void dly_us (UINT n);
+  57               	
+  58               	.global dly_100us
+  59               	.func dly_100us
+  60               	dly_100us:
+  61:asmfunc.S     **** 	ldi	r24, lo8(16000000 / 100000)	/* Loop counter */
+  62:asmfunc.S     **** 1:	sbiw	r30, 1		/* 10 clocks per loop */
+  63:asmfunc.S     **** 	sbiw	r30, 1
+  64:asmfunc.S     **** 	sbiw	r30, 1
+  65:asmfunc.S     **** 	nop
+  66:asmfunc.S     **** 	dec	r24
+  67:asmfunc.S     **** 	brne	1b
+  68:asmfunc.S     **** 	ret
+  69               	.endfunc
+  70               	
+  71               	
+  72               	
+  73               	;---------------------------------------------------------------------------;
+  74               	; Select MMC
+  75               	;
+  76               	; void select (void);
+  77               	
+  78               	.global select
+  79               	.func select
+  80               	select:
+  81:asmfunc.S     **** 	rcall	deselect
+  82:asmfunc.S     **** 	cbi	PORT_CS
+  83:asmfunc.S     **** 	rjmp	rcv_spi
+  84               	.endfunc
+  85               	
+  86               	
+  87               	
+  88               	;---------------------------------------------------------------------------;
+  89               	; Deselect MMC
+  90               	;
+  91               	; void deselect (void);
+  92               	
+  93               	.global deselect
+  94               	.func deselect
+  95               	deselect:
+  96:asmfunc.S     **** 	sbi	PORT_CS
+  97               		; Goto next function
+  98               	.endfunc
+  99               	
+ 100               	
+ 101               	
+ 102               	;---------------------------------------------------------------------------;
+ 103               	; Receive a byte
+ 104               	;
+ 105               	; BYTE rcv_spi (void);
+ 106               	
+ 107               	.global rcv_spi
+ 108               	.func rcv_spi
+ 109               	rcv_spi:
+ 110:asmfunc.S     **** 	ldi	r24, 0xFF	; Send 0xFF to receive data
+ 111               		; Goto next function
+ 112               	.endfunc
+ 113               	
+ 114               	
+ 115               	
+ 116               	;---------------------------------------------------------------------------;
+ 117               	; Transmit a byte
+ 118               	;
+ 119               	; void xmit_spi (BYTE);
+ 120               	
+ 121               	.global xmit_spi
+ 122               	.func xmit_spi
+ 123               	xmit_spi:
+ 124:asmfunc.S     **** 	ldi	r25, 8
+ 125:asmfunc.S     **** 1:	sbrc	r24, 7		; DI = Bit to sent
+ 126:asmfunc.S     **** 	sbi	PORT_DI		; 
+ 127:asmfunc.S     **** 	sbrs	r24, 7		; 
+ 128:asmfunc.S     **** 	cbi	PORT_DI		; /
+ 129:asmfunc.S     **** 	lsl	r24		; Get DO from MMC
+ 130:asmfunc.S     **** 	sbic	PIN_DO		; 
+ 131:asmfunc.S     **** 	inc	r24		; /
+ 132:asmfunc.S     **** 	sbi	PORT_CK		; A positive pulse to SCLK
+ 133:asmfunc.S     **** 	cbi	PORT_CK		; /
+ 134:asmfunc.S     **** 	dec	r25		; Repeat 8 times
+ 135:asmfunc.S     **** 	brne	1b		; /
+ 136:asmfunc.S     **** 	ret
+ 137               	.endfunc
+ 138               	
+ 139               	
+ 140               	
+ 141               	;---------------------------------------------------------------------------
+ 142               	; Erase a flash page
+ 143               	;
+ 144               	; void flash_erase (DWORD flash_addr);
+ 145               	
+ 146               	.global flash_erase
+ 147               	.func flash_erase
+ 148               	flash_erase:
+ 149               	
+ 150:asmfunc.S     **** 	movw	ZL, r22
+ 151               	#if FLASHEND >= 0x10000
+ 152:asmfunc.S     **** 	out	_SFR_IO_ADDR(RAMPZ), r24
+ 153               	#endif
+ 154               	
+ 155               		; Initiate erase operation
+ 156:asmfunc.S     **** 	ldi	r24, 0b00000011
+ 157:asmfunc.S     **** 	sts	_SFR_MEM_ADDR(SPMCSR), r24
+ 158:asmfunc.S     **** 	spm
+ 159               	
+ 160               		; Wait for end of erase operation
+ 161:asmfunc.S     **** 1:	lds	r24, _SFR_MEM_ADDR(SPMCSR)
+ 162:asmfunc.S     **** 	sbrc	r24, 0
+ 163:asmfunc.S     **** 	rjmp	1b
+ 164               	
+ 165               		; Re-enable read access to the flash
+ 166:asmfunc.S     **** 	ldi	r24, 0b00010001
+ 167:asmfunc.S     **** 	sts	_SFR_MEM_ADDR(SPMCSR), r24
+ 168:asmfunc.S     **** 	spm
+ 169               	
+ 170:asmfunc.S     **** 9:	ret
+ 171               	.endfunc
+ 172               	
+ 173               	
+ 174               	
+ 175               	;---------------------------------------------------------------------------
+ 176               	; Write a flash page
+ 177               	;
+ 178               	; void flash_write (DWORD flash_addr, const BYTE* data);
+ 179               	
+ 180               	.global flash_write
+ 181               	.func flash_write
+ 182               	flash_write:
+ 183:asmfunc.S     **** 	push	r0
+ 184:asmfunc.S     **** 	push	r1
+ 185               	
+ 186               	#if FLASHEND >= 0x10000
+ 187:asmfunc.S     **** 	out	_SFR_IO_ADDR(RAMPZ), r24
+ 188               	#endif
+ 189               	
+ 190               		; Fill page buffer
+ 191:asmfunc.S     **** 	movw	ZL, r22
+ 192:asmfunc.S     **** 	movw	XL, r20
+ 193:asmfunc.S     **** 	ldi	r25, lo8(SPM_PAGESIZE/2)
+ 194:asmfunc.S     **** 1:	ld	r0, X+
+ 195:asmfunc.S     **** 	ld	r1, X+
+ 196:asmfunc.S     **** 	ldi	r24, 0b00000001
+ 197:asmfunc.S     **** 	sts	_SFR_MEM_ADDR(SPMCSR), r24
+ 198:asmfunc.S     **** 	spm
+ 199:asmfunc.S     **** 	adiw	ZL, 2
+ 200:asmfunc.S     **** 	dec	r25
+ 201:asmfunc.S     **** 	brne	1b
+ 202               	
+ 203               		; Initiate write operation
+ 204:asmfunc.S     **** 	movw	ZL, r22
+ 205:asmfunc.S     **** 	ldi	r24, 0b00000101
+ 206:asmfunc.S     **** 	sts	_SFR_MEM_ADDR(SPMCSR), r24
+ 207:asmfunc.S     **** 	spm
+ 208               	
+ 209               		; Wait for end of write operation
+ 210:asmfunc.S     **** 2:	lds	r24, _SFR_MEM_ADDR(SPMCSR)
+ 211:asmfunc.S     **** 	sbrc	r24, 0
+ 212:asmfunc.S     **** 	rjmp	2b
+ 213               	
+ 214               		; Re-enable read access to the flash
+ 215:asmfunc.S     **** 	ldi	r24, 0b00010001
+ 216:asmfunc.S     **** 	sts	_SFR_MEM_ADDR(SPMCSR), r24
+ 217:asmfunc.S     **** 	spm
+ 218               	
+ 219:asmfunc.S     **** 9:	pop	r1
+ 220:asmfunc.S     **** 	pop	r0
+ 221:asmfunc.S     **** 	ret
+ 222               	.endfunc
+DEFINED SYMBOLS
+           asmfunc.S:43     .text:00000000 init_spi
+           asmfunc.S:60     .text:0000000a dly_100us
+           asmfunc.S:80     .text:0000001a select
+           asmfunc.S:95     .text:00000020 deselect
+           asmfunc.S:109    .text:00000022 rcv_spi
+           asmfunc.S:123    .text:00000024 xmit_spi
+           asmfunc.S:148    .text:0000003e flash_erase
+           asmfunc.S:182    .text:0000005c flash_write
+
+NO UNDEFINED SYMBOLS
