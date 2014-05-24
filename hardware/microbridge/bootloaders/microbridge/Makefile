@@ -64,7 +64,7 @@ TARGET = stk500boot
 
 
 # List C source files here. (C dependencies are automatically generated.)
-SRC = stk500boot.c pff.c mmc.c
+SRC = stk500boot.c
 
 
 # List Assembler source files here.
