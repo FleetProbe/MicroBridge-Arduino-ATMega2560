@@ -160,11 +160,23 @@ void flash_write(DWORD, const BYTE*); /* Program a flash page (asmfunc.S) */
 #define SCK PINB1 //Pin 52
 #define MISO PINB3 //Pin 50
 #define MOSI PINB2 //Pin 51
-#define SS PINA0 //Pin 22
+#define SS PINB4 //Pin 22
 //#define SS_MASTER PINB0 //Pin 53
+#define LED1 PINB5
+#define LED2 PINB6
+#define LED3 PINB7
+		
 
-#define SS_LOW() SPI_PORTA &= ~_BV(SS)
-#define SS_HIGH() SPI_PORTA |= _BV(SS)
+#define LED1_LOW() SPI_PORTB &= ~(_BV(LED1))
+#define LED1_HIGH() SPI_PORTB |= _BV(LED1)
+#define LED2_LOW() SPI_PORTB &= ~(_BV(LED2))
+#define LED2_HIGH() SPI_PORTB |= _BV(LED2)
+#define LED3_LOW() SPI_PORTB &= ~(_BV(LED3))
+#define LED3_HIGH() SPI_PORTB |= _BV(LED3)
+
+
+#define SS_LOW() SPI_PORTB &= ~(_BV(SS))
+#define SS_HIGH() SPI_PORTB |= _BV(SS)
 //#define SS_MASTER_LOW() SPI_PORTB &= ~_BV(SS_MASTER)
 //#define SS_MASTER_HIGH() SPI_PORTB |= _BV(SS_MASTER)
 
@@ -598,11 +610,13 @@ int main(void) {
 	setBitOrder(1);
 	setClockDivider(0x04);
 
-	SPI_PORTA = _BV(SS);
-	SPI_PORTB = _BV(SCK) | _BV(MISO) | _BV(MOSI);
-	SPI_DDRA = _BV(SS);
-	SPI_DDRB = _BV(SCK) | _BV(MOSI);
-
+	SPI_PORTB = _BV(SCK) | _BV(MISO) | _BV(MOSI) | _BV(SS) | _BV(LED1) | _BV(LED2) | _BV(LED3);
+	SPI_DDRB = _BV(SCK) | _BV(MOSI) |_BV(SS) | _BV(LED1) | _BV(LED2) | _BV(LED3);
+	
+	LED1_LOW();
+	LED2_LOW();
+	LED3_LOW();
+	
 	SS_HIGH();
 //	SS_MASTER_HIGH();
 
@@ -1173,12 +1187,27 @@ int main(void) {
 				for (int i = 0; i < SPM_PAGESIZE; i++) {
 					Buff[i] = spiReadReg(address);
 					address++;
-					sendchar('[');
-					dec_hex(Buff[i]);
-					sendchar(']');
-					if(address % 16 == 0 && address != 0){
-						sendchar(0x0d);
-						sendchar(0x0a);
+					// sendchar('[');
+					// dec_hex(Buff[i]);
+					// sendchar(']');
+					// if(address % 16 == 0 && address != 0){
+					// 	sendchar(0x0d);
+					// 	sendchar(0x0a);
+					// }
+					// 
+					// 
+					if(((address +1)%1200) <= 300 && ((address +1)%1200) >= 0){
+						LED1_HIGH();
+						LED2_LOW();
+						LED3_LOW();
+					}else if(((address +1)%1200) <= 700 && ((address +1)%1200) >= 400){
+						LED1_LOW();
+						LED2_HIGH();
+						LED3_LOW();
+					}else if( ((address +1) %1200) <= 1100  && ((address +1) %1200) >= 8){
+						LED1_LOW();
+						LED2_LOW();
+						LED3_HIGH();
 					}
 				}
 				flash_write(fa, Buff); /* Write it if the data is available */
