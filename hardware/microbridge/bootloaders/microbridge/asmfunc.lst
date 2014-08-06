@@ -1,7 +1,6 @@
    1               	# 1 "asmfunc.S"
    1               	;---------------------------------------------------------------------------;
    0               	
-   0               	
    2               	; MMC hardware controls and Flash controls      (C)ChaN, 2010
    3               	;---------------------------------------------------------------------------;
    4               	; Hardware dependent macros to be modified

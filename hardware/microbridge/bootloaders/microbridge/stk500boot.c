@@ -161,7 +161,7 @@ void flash_write(DWORD, const BYTE*); /* Program a flash page (asmfunc.S) */
 #define MISO PINB3 //Pin 50
 #define MOSI PINB2 //Pin 51
 #define SS PINB4 //Pin 22
-//#define SS_MASTER PINB0 //Pin 53
+#define SS_MASTER PINB0 //Pin 53
 #define LED1 PINB5
 #define LED2 PINB6
 #define LED3 PINB7
@@ -177,8 +177,8 @@ void flash_write(DWORD, const BYTE*); /* Program a flash page (asmfunc.S) */
 
 #define SS_LOW() SPI_PORTB &= ~(_BV(SS))
 #define SS_HIGH() SPI_PORTB |= _BV(SS)
-//#define SS_MASTER_LOW() SPI_PORTB &= ~_BV(SS_MASTER)
-//#define SS_MASTER_HIGH() SPI_PORTB |= _BV(SS_MASTER)
+#define SS_MASTER_LOW() SPI_PORTB &= ~_BV(SS_MASTER)
+#define SS_MASTER_HIGH() SPI_PORTB |= _BV(SS_MASTER)
 
 /*
  * define CPU frequency in Mhz here if not defined in Makefile
@@ -361,11 +361,11 @@ void setClockDivider(uint8_t rate) {
 #define SPIFLASH_STATUSREAD       0x05
 uint8_t readStatus() {
 	SS_LOW();
-//	SS_MASTER_HIGH();
+	SS_MASTER_HIGH();
 	transfer(SPIFLASH_STATUSREAD);
 	uint8_t status = transfer(0);
 	SS_HIGH();
-//	SS_MASTER_LOW();
+	SS_MASTER_LOW();
 	return status;
 }
 uint8_t busy() {
@@ -618,7 +618,7 @@ int main(void) {
 	LED3_LOW();
 	
 	SS_HIGH();
-//	SS_MASTER_HIGH();
+	SS_MASTER_HIGH();
 
 	SPCR |= _BV(MSTR);
 	SPCR |= _BV(SPE);
