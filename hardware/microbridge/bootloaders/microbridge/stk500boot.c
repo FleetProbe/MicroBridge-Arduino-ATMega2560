@@ -156,27 +156,29 @@ void flash_write(DWORD, const BYTE*); /* Program a flash page (asmfunc.S) */
 #define SPI_PORTA PORTA
 #define SPI_DDRB DDRB
 #define SPI_PORTB PORTB
+#define SPI_DDRE DDRE
+#define SPI_PORTE PORTE
 
 #define SCK PINB1 //Pin 52
 #define MISO PINB3 //Pin 50
 #define MOSI PINB2 //Pin 51
-#define SS PINB4 //Pin 22
+#define SS PINE6 //Pin 22
 #define SS_MASTER PINB0 //Pin 53
-#define LED1 PINB5
-#define LED2 PINB6
-#define LED3 PINB7
+#define LED1 PINA0
+#define LED2 PINA1
+#define LED3 PINA2
 		
 
-#define LED1_LOW() SPI_PORTB &= ~(_BV(LED1))
-#define LED1_HIGH() SPI_PORTB |= _BV(LED1)
-#define LED2_LOW() SPI_PORTB &= ~(_BV(LED2))
-#define LED2_HIGH() SPI_PORTB |= _BV(LED2)
-#define LED3_LOW() SPI_PORTB &= ~(_BV(LED3))
-#define LED3_HIGH() SPI_PORTB |= _BV(LED3)
+#define LED1_LOW() SPI_PORTA &= ~(_BV(LED1))
+#define LED1_HIGH() SPI_PORTA |= _BV(LED1)
+#define LED2_LOW() SPI_PORTA &= ~(_BV(LED2))
+#define LED2_HIGH() SPI_PORTA |= _BV(LED2)
+#define LED3_LOW() SPI_PORTA &= ~(_BV(LED3))
+#define LED3_HIGH() SPI_PORTA |= _BV(LED3)
 
 
-#define SS_LOW() SPI_PORTB &= ~(_BV(SS))
-#define SS_HIGH() SPI_PORTB |= _BV(SS)
+#define SS_LOW() SPI_PORTE &= ~(_BV(SS))
+#define SS_HIGH() SPI_PORTE |= _BV(SS)
 #define SS_MASTER_LOW() SPI_PORTB &= ~_BV(SS_MASTER)
 #define SS_MASTER_HIGH() SPI_PORTB |= _BV(SS_MASTER)
 
@@ -609,10 +611,13 @@ int main(void) {
 	setDataMode(0x00);
 	setBitOrder(1);
 	setClockDivider(0x04);
+	SPI_PORTA = _BV(LED1) | _BV(LED2) | _BV(LED3);
+	SPI_DDRA = _BV(LED1) | _BV(LED2) | _BV(LED3);
+	SPI_PORTB = _BV(SCK) | _BV(MISO) | _BV(MOSI)  ;
+	SPI_DDRB = _BV(SCK) | _BV(MOSI);
+	SPI_PORTE = _BV(SS);
+	SPI_DDRE = _BV(SS);
 
-	SPI_PORTB = _BV(SCK) | _BV(MISO) | _BV(MOSI) | _BV(SS) | _BV(LED1) | _BV(LED2) | _BV(LED3);
-	SPI_DDRB = _BV(SCK) | _BV(MOSI) |_BV(SS) | _BV(LED1) | _BV(LED2) | _BV(LED3);
-	
 	LED1_LOW();
 	LED2_LOW();
 	LED3_LOW();
