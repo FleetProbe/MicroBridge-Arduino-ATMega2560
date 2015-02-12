@@ -1,6 +1,6 @@
 USB and SDCARD Firmware flashing for the ARDUINO ATMEGA 2560 and ADK
 ---------------------------------------------------------------------
-
+i
 mechanics :
 
 The bootloader looks for byte in eeprom at address 0x1FF:
