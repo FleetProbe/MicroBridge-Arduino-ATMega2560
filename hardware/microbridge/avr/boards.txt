@@ -1,17 +1,19 @@
 microbridge.name=Arduino Mega 2560 (DUAL SD Bootloader)
 
-microbridge.upload.protocol=stk500v2
+microbridge.upload.tool=arduino:avrdude
+microbridge.upload.protocol=wiring
 microbridge.upload.maximum_size=258048
 microbridge.upload.speed=115200
 
+microbridge.bootloader.tool=arduino:avrdude
 microbridge.bootloader.low_fuses=0xFF
 microbridge.bootloader.high_fuses=0xD8
 microbridge.bootloader.extended_fuses=0xFD
-microbridge.bootloader.path=microbridge
-microbridge.bootloader.file=stk500boot.hex
+microbridge.bootloader.file=microbridge/stk500boot.hex
 microbridge.bootloader.unlock_bits=0x3F
 microbridge.bootloader.lock_bits=0x0F
 
+microbridge.build.board=AVR_MEGA2560
 microbridge.build.mcu=atmega2560
 microbridge.build.f_cpu=16000000L
 microbridge.build.core=arduino:arduino
