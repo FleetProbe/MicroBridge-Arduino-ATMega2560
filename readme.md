@@ -63,11 +63,26 @@ Using arduino ISP bootloader :
 
 Compile bootloader:
 
-install Crosspack (http://www.obdev.at/products/crosspack/index.html)
+MacOS:
 
-Navigate to My Documents/arduino/hardware/microbridge/bootladers/microbridge/
+1) install Crosspack (http://www.obdev.at/products/crosspack/index.html)
 
-issue : 
+2) Navigate to My Documents/arduino/hardware/microbridge/bootladers/microbridge/
+
+Windows:
+
+1) Install WinAVR (https://sourceforge.net/projects/winavr/)
+
+2) Patch WinAVR to run on newer Windows Versions by extracting msys-1.0.dll 
+   from http://www.madwizard.org/download/electronics/msys-1.0-vista64.zip
+   to c:\WinAVR-20100110\utils\bin and overwriting existing file.
+   
+3) Go to hardware\microbridge\avr\bootloaders\microbridge and issue:
+   md .dep 
+
+
+
+then issue : 
 	
 	- make clean
 	
